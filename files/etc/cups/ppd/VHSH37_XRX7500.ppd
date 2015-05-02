@@ -1,0 +1,190 @@
+*PPD-Adobe: "4.2"
+*% Xerox Corporation (R) Printer Description File
+*% Copyright Xerox Corporation
+*% All Rights Reserved. 
+*% This PPD should only be used in a UNIX environment only!
+*FormatVersion: "4.2"
+*FileVersion: "1.0"
+*LanguageEncoding: ISOLatin1
+*LanguageVersion: English
+*PCFileName: "XR_generic.PPD"
+*Product: "(Xerox generic Laser Printer)"
+*PSVersion: "(2013.115) 1"
+*ModelName: "Xerox Generic"
+*NickName: "Xerox Generic"
+*LprQue: "lp"
+*HelpFile: "xr_gen.hlp"
+*ColorDevice: False
+
+
+*OpenUI *PageSize/Paper Size: PickOne
+*OrderDependency: 30 PageSetup *PageSize
+*DefaultPageSize: Letter
+*PageSize Letter/Letter - 8.5x11: "
+    2 dict dup /PageSize [612 792] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageSize Legal/Legal - 8.5x14: "
+    2 dict dup /PageSize [612 1008] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageSize A4/A4 - 210x297mm: "
+    2 dict dup /PageSize [595 842] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageSize 8.5x13/Folio - 8.5x13: "
+    2 dict dup /PageSize [612 936] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageSize 8x10/8x10 - 8x10in: "
+    2 dict dup /PageSize [576 720] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageSize 8x13/Foolscap - 204x330mm: "
+    2 dict dup /PageSize [576 936] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageSize Executive/Executive - 7.25x10.5: "
+    2 dict dup /PageSize [522 756] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageSize SP.Folio/SP. Folio - 216x315mm: "
+    2 dict dup /PageSize [612 893] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageSize B5/B5 - 182x257mm: "
+    2 dict dup /PageSize [516 729] put dup /ImagingBBox null put setpagedevice"
+*End
+
+*% Envelope Sizes
+*% --------------
+*PageSize Comm10/Commercial #10 Envelope: "
+    2 dict dup /PageSize [297 684] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageSize DL/DL Envelope - 110x220mm: "
+    2 dict dup /PageSize [312 624] put dup /ImagingBBox null put setpagedevice"
+*End
+
+
+*?PageSize: "
+ save
+   currentpagedevice /PageSize get aload pop
+   2 copy gt {exch} if
+   (Unknown)
+  11 dict
+   dup [612 792] (Letter) put
+   dup [612 1008] (Legal) put
+   dup [595 842] (A4) put
+   dup [612 936] (8.5x13) put
+   dup [576 720] (8x10) put
+   dup [576 936] (8x13) put
+   dup [522 756] (Executive) put
+   dup [612 893] (SP.Folio) put
+   dup [516 729] (B5) put
+   dup [297 684] (Comm10) put
+   dup [312 624] (DL) put
+ { exch aload pop 4 index sub abs 5 le exch
+   5 index sub abs 5 le and
+      {exch pop exit} {pop} ifelse
+   } bind forall
+   = flush pop pop
+restore
+"
+*End
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion:  PickOne
+*OrderDependency: 40 AnySetup *PageRegion
+*DefaultPageRegion: Letter/Letter - 8.5x11
+*PageRegion  Letter/Letter - 8.5x11: "
+    2 dict dup /PageSize [612 792] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageRegion Legal/Legal - 8.5x14: "
+    2 dict dup /PageSize [612 1008] put dup /ImagingBBox null put
+setpagedevice"
+*End
+*PageRegion A4/A4 - 210x297mm: "
+    2 dict dup /PageSize [595 842] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageRegion 8.5x13/Folio - 8.5x13: "
+    2 dict dup /PageSize [612 936] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageRegion 8x10/8x10 - 8x10in: "
+    2 dict dup /PageSize [576 720] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageRegion 8x13/Foolscap - 204x330mm: "
+    2 dict dup /PageSize [576 936] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageRegion Executive/Executive - 7.25x10.5: "
+    2 dict dup /PageSize [522 756] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageRegion SP.Folio/SP. Folio - 216x315mm: "
+    2 dict dup /PageSize [612 893] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageRegion B5/B5 - 182x257mm: "
+    2 dict dup /PageSize [516 729] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageRegion Comm10/Commercial #10 Envelope: "
+    2 dict dup /PageSize [297 684] put dup /ImagingBBox null put setpagedevice"
+*End
+*PageRegion DL/DL Envelope - 110x220mm: "
+    2 dict dup /PageSize [312 624] put dup /ImagingBBox null put setpagedevice"
+*End
+*CloseUI: *PageRegion
+
+*% The following entries provide information about specific paper keywords.
+*DefaultImageableArea: Letter/Letter - 8.5x11
+*ImageableArea Letter/Letter - 8.5x11:    "14 14 598 778"
+*ImageableArea Legal/Legal - 8.5x14:     "14 14 598 994"
+*ImageableArea A4/A4 - 210x297mm:        "14 14 581 828"
+*ImageableArea 8.5x13/Folio - 8.5x13:    "14 14 598 922"
+*ImageableArea 8x10/8x10 - 8x10in:      "14 14 562 706"
+*ImageableArea 8x13/Foolscap - 204x330mm:      "14 14 562 922"
+*ImageableArea Executive/Executive - 7.25x10.5: "14 14 508 742"
+*ImageableArea SP.Folio/SP. Folio - 216x315mm:  "14 14 598 879"
+*ImageableArea B5/B5 - 182x257mm:        "14 14 502 715"
+*ImageableArea Comm10/Commercial #10 Envelope:    "14 14 283 670"
+*ImageableArea DL/DL Envelope - 110x220mm:        "14 14 298 610"
+
+*?ImageableArea: "
+ save
+   /cvp { (                ) cvs print ( ) print } bind def
+   /upperright {10000 mul floor 10000 div} bind def
+   /lowerleft {10000 mul ceiling 10000 div} bind def
+   newpath clippath pathbbox
+   4 -2 roll exch 2 {lowerleft cvp} repeat
+   exch 2 {upperright cvp} repeat flush
+ restore
+"
+*End
+
+*% These provide the physical dimensions of the paper (by keyword)
+*DefaultPaperDimension: Letter/Letter - 8.5x11
+*PaperDimension Letter/Letter - 8.5x11:    "612 792"
+*PaperDimension Legal/Legal - 8.5x14:     "612 1008"
+*PaperDimension A4/A4 - 210x297mm:        "595 842"
+*PaperDimension 8.5x13/Folio - 8.5x13:    "612 936"
+*PaperDimension 8x10/8x10 - 8x10in:      "576 720"
+*PaperDimension 8x13/Foolscap - 204x330mm:      "576 936"
+*PaperDimension Executive/Executive - 7.25x10.5: "522 756"
+*PaperDimension SP.Folio/SP. Folio - 216x315mm:  "612 893"
+*PaperDimension B5/B5 - 182x257mm:        "516 729"
+*PaperDimension Comm10/Commercial #10 Envelope:    "297 684"
+*PaperDimension DL/DL Envelope - 110x220mm:        "312 624"
+
+*RequiresPageRegion All: False
+
+
+
+*OpenUI *MediaType/Media Type:  PickOne
+*OrderDependency: 30 AnySetup *MediaType
+*DefaultMediaType: Plain
+*MediaType Plain/Plain Paper: "1 dict dup /MediaType (Plain Paper) put setpagedevice"
+*MediaType Transparency: "1 dict dup /MediaType (Transparency) put setpagedevice"
+*MediaType LabelStock/Label Stock: "1 dict dup /MediaType (Label Stock) put setpagedevice"
+*?MediaType: "
+  save
+    currentpagedevice /MediaType
+     {get} stopped
+       {pop pop (Plain)} {dup null eq {pop (Plain)} if} ifelse
+    = flush
+  restore
+"
+*End
+*CloseUI: *MediaType
+
+
+*% ============== end of PPD file for Xerox 4900 Color Laser Printer ==========
+
